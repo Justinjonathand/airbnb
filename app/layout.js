@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function Layout({ children }) {   // ✅ Use the correct React prop signature
+export default function Layout({ children }) {   // ✅ Use the correct React prop signature ok
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

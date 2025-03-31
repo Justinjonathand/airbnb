@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function Layout({ children }) {   // ✅ Use the correct React prop signature ok
+export default function Layout({ children }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -21,20 +21,12 @@ export default function Layout({ children }) {   // ✅ Use the correct React pr
   }, []);
 
   if (!mounted) {
-    return <div>Loading...</div>;  // Prevent hydration issues
+    return <div>Loading...</div>;  // Prevents hydration issues
   }
 
   return (
-    <html lang="en">                  {/* ✅ Add proper HTML structure */}
-      <head>
-        <title>Airbnb Clone</title>   {/* ✅ Include title */}
-        <meta name="description" content="Airbnb clone using Next.js" />
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
-      </body>
-    </html>
+    <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      {children}
+    </div>
   );
 }
-// ✅ Use the correct React prop signature
